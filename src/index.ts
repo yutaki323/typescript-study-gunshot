@@ -9,7 +9,7 @@ import * as b from './App/Bullet'
 
   const magazine :m.Magazine = await action.choiceMagazine()
 
-  const bulletGenerator :Function = await action.choiceBulletGenerator()
+  const bulletGenerator :() => b.Bullet = await action.choiceBulletGenerator()
 
   // 操作
   while(true) {

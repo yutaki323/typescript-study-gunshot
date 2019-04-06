@@ -31,7 +31,7 @@ export const choiceMagazine = async function() :Promise<m.Magazine> {
   return magazine
 }
 
-export const choiceBulletGenerator = async function() :Promise<Function> {
+export const choiceBulletGenerator = async function() :Promise<() => b.Bullet> {
   const response = await prompts({
     type: "select",
     name: "target",
@@ -39,12 +39,12 @@ export const choiceBulletGenerator = async function() :Promise<Function> {
     choices: c.BulletFactory.choices()
   })
 
-  const bulletGenerator :Function = c.BulletFactory[response.target]
+  const bulletGenerator: () => b.Bullet = c.BulletFactory[response.target]
 
   return bulletGenerator
 }
 
-export const operate = async function(gun: g.Gun, magazine: m.Magazine, bulletGenerator: Function) : Promise<boolean> {
+export const operate = async function(gun: g.Gun, magazine: m.Magazine, bulletGenerator: () => b.Bullet) : Promise<boolean> {
   const response = await prompts({
     type: "select",
     name: "target",
