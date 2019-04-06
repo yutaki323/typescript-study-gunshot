@@ -1,7 +1,7 @@
 # typescript-study-gunshot
 Typescriptの学習で書いたお遊びコード。コンソールで銃の操作をするアプリ。
 
-![result](https://github.com/yutaki323/typescript-study-gunshot/blob/gh-pages/demo/demo.gif)
+![demo](demo/demo.gif)
 
 # 動作確認済み環境
 - node v10.8.0
