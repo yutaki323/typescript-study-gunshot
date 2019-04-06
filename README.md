@@ -10,5 +10,5 @@ Typescriptの学習で書いたお遊びコード。コンソールで銃の操�
 ```
 $ npm install
 $ tsc
-$ node index.js
+$ node build/index.js
 ```
