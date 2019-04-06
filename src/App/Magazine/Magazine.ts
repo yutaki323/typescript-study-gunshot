@@ -33,13 +33,8 @@ export default abstract class Magazine
     return this.stock.shift()
   }
 
-  fullLoad(bulletGenerator: Function): void {
-    this.stock = []
-
-    let bullet: b.Bullet
-
+  fullLoad(bulletGenerator: () => b.Bullet): void {
     for (let i = 0; i < this.max; i ++) {
-      bullet = bulletGenerator()
       if (this.pushBullet(bulletGenerator()) === false) {
         return
       }
