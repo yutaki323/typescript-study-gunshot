@@ -36,7 +36,7 @@ export default abstract class Magazine
   fullLoad(bulletGenerator: () => b.Bullet): void {
     for (let i = 0; i < this.max; i ++) {
       if (this.pushBullet(bulletGenerator()) === false) {
-        return
+        break
       }
     }
 
