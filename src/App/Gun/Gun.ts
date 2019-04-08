@@ -6,7 +6,7 @@ export default abstract class Gun
 {
   protected abstract name: string
 
-  protected semiAuto: boolean = false
+  protected semiAuto: boolean = true
 
   public magroom: m.Magazine | null = null
 
