@@ -6,7 +6,7 @@ export default abstract class Gun
 {
   protected abstract name: string
 
-  protected semiAuto: boolean = false
+  protected semiAuto: boolean = true
 
   public magroom: m.Magazine | null = null
 
@@ -121,5 +121,9 @@ export default abstract class Gun
     event.emit('Gun.Shot.Error.NoBullet', { gun: this })
 
     return false
+  }
+
+  shotSound(bullet: b.Bullet): string {
+    return bullet.sound()
   }
 }

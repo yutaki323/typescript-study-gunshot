@@ -116,8 +116,9 @@ event.on(
 event.on(
   'Gun.Shot.Success',
   (option: { gun: g.Gun, bullet: b.Bullet }) => {
+    const shotSound = option.gun.shotSound(option.bullet)
     consola.success(
-      '<<<!! Bang !!>>>'+
+      shotSound+
       option.bullet.getName()+'を発射しました！'+
       ' [残弾 '+option.gun.getBulletCount()+']'
      )

@@ -13,26 +13,30 @@ export const GunFactory: Factory = {
        {title: "Glock17", value: "glock17"},
        {title: "Glock17L(ロングバレル)", value: "glock17l"},
        {title: "ベレッタM92F", value: "m92f"},
-       {title: ".44オートマグ", value: "automag"}
+       {title: ".44オートマグ", value: "automag"},
+       {title: "ウェルロッドMk.1(ボルトアクション・消音)", value: "welrod1"}
      ]
   },
   glock17: (): g.Gun => new g.GunGlock17,
   glock17l: (): g.Gun =>  new g.GunGlock17L,
   m92f: (): g.Gun => new g.GunM92F,
-  automag: (): g.Gun => new g.Gun44AutoMag
+  automag: (): g.Gun => new g.Gun44AutoMag,
+  welrod1: (): g.Gun => new g.GunWelrodMk1
 };
 
 export const MagazineFactory: Factory = {
    choices() {
     return [
-      {title: "Glock17用", value: "glock17"},
-      {title: "ベレッタM92F用", value: "m92f"},
-      {title: ".44オートマグ用", value: "automag"}
+      {title: "Glock17用(9mm)", value: "glock17"},
+      {title: "ベレッタM92F用(9mm)", value: "m92f"},
+      {title: ".44オートマグ用(.44口径)", value: "automag"},
+      {title: "ウェルロッドMk.1用(9mm)", value: "welrod1"}
     ]
   },
   glock17: ():m.Magazine => new m.MagazineGlockStandard,
   m92f: (): m.Magazine => new m.MagazineM92,
-  automag: (): m.Magazine => new m.Magazine44AutoMag
+  automag: (): m.Magazine => new m.Magazine44AutoMag,
+  welrod1: (): m.Magazine => new m.MagazineWelrodMk1
 };
 
 export const BulletFactory: Factory = {
