@@ -5,4 +5,8 @@ export default abstract class Bullet
   getName(): string {
     return this.name
   }
+
+  sound(): string {
+    return '<<! バン !>>'
+  }
 }

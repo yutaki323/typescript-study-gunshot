@@ -122,4 +122,8 @@ export default abstract class Gun
 
     return false
   }
+
+  shotSound(bullet: b.Bullet): string {
+    return bullet.sound()
+  }
 }
